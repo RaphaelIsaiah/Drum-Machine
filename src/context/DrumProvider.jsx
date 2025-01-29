@@ -1,8 +1,6 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
+import { DrumContext } from "./DrumContext";
 import PropTypes from "prop-types";
-
-// create the context
-export const DrumContext = createContext();
 
 // function to provide the context to the app
 export const DrumProvider = ({ children }) => {
@@ -43,7 +41,6 @@ export const DrumProvider = ({ children }) => {
     </DrumContext.Provider>
   );
 };
-
 DrumProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
