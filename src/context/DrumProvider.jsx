@@ -16,13 +16,15 @@ export const DrumProvider = ({ children }) => {
 
   const togglePower = () => {
     setPower(!power);
-    setDisplay(power ? "Power Off" : "Power On");
+    setDisplay("");
+    setActivePad(null);
   };
 
   const toggleSoundBank = () => {
-    const newBank = currentBank === "Bank One" ? "Bank Two" : "Bank One";
-    setCurrentBank(newBank);
-    setDisplay(newBank);
+    if (power) {
+      const newBank = currentBank === "Bank One" ? "Bank Two" : "Bank One";
+      setCurrentBank(newBank);
+    }
   };
 
   return (
