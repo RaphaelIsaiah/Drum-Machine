@@ -3,6 +3,7 @@ import { DrumContext } from "../context/DrumContext";
 import DrumPad from "./drumpad";
 import SoundBankDisplay from "./SoundBankDisplay";
 import PadDispay from "./PadDisplay";
+import VolumeControl from "./VolumeControl";
 import { soundBankOne, soundBankTwo } from "../utils/sounds";
 
 const DrumMachine = () => {
@@ -20,6 +21,7 @@ const DrumMachine = () => {
         </button>
         <SoundBankDisplay />
       </div>
+      <VolumeControl />
       <PadDispay />
       <div className="pads">
         {pads.map((pad) => (

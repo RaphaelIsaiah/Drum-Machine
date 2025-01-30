@@ -1,13 +1,15 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import PropTypes from "prop-types";
 import { DrumContext } from "../context/DrumContext";
 import { playSound, handleKeyPress } from "../utils/helpers";
 
 const DrumPad = ({ keyTrigger, sound, id }) => {
-  const { power, updateDisplay } = useContext(DrumContext);
+  const { power, updateDisplay, volume } = useContext(DrumContext);
+  const audioRef = useRef(null);
 
   const playSoundFunction = () => {
     if (power) {
+      audioRef.current.volume = volume; // Adjust volume before playing sound
       playSound(keyTrigger);
       updateDisplay(id);
     }
@@ -28,7 +30,12 @@ const DrumPad = ({ keyTrigger, sound, id }) => {
   return (
     <div className="drum-pad" id={id} onClick={playSoundFunction}>
       {keyTrigger}
-      <audio src={sound} className="clip" id={keyTrigger}></audio>
+      <audio
+        ref={audioRef}
+        src={sound}
+        className="clip"
+        id={keyTrigger}
+      ></audio>
     </div>
   );
 };
