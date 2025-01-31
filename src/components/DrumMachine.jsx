@@ -13,17 +13,32 @@ const DrumMachine = () => {
   const pads = currentBank === "Bank One" ? soundBankOne : soundBankTwo;
 
   return (
-    <div id="drum-machine">
-      <button onClick={togglePower}>{power ? "Power Off" : "Power On"}</button>
-      <div>
-        <button onClick={toggleSoundBank} disabled={!power}>
+    <div
+      id="drum-machine"
+      className="flex flex-col items-center p-4 bg-gray-800 text-white min-h-screen"
+    >
+      <h1 className="text-3xl font-bold mb-4">Drum Machine</h1>
+
+      <button
+        className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded mb-4"
+        onClick={togglePower}
+      >
+        {power ? "Power Off" : "Power On"}
+      </button>
+
+      <div className="flex flex-col items-center mb-4">
+        <button
+          className="bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded mb-2 disabled:opacity-50"
+          onClick={toggleSoundBank}
+          disabled={!power}
+        >
           Toggle Sound Bank
         </button>
         <SoundBankDisplay />
       </div>
       <VolumeControl />
       <PadDispay />
-      <div className="pads">
+      <div className="grid grid-cols-3 gap-4 mt-4">
         {pads.map((pad) => (
           <DrumPad
             key={pad.keyTrigger}

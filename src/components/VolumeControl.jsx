@@ -9,8 +9,13 @@ const VolumeControl = () => {
   };
 
   return (
-    <div id="volume-control">
-      <label htmlFor="volume-slider">Volume</label>
+    <div id="volume-control" className="my-4">
+      <label
+        htmlFor="volume-slider"
+        className="block text-sm font-medium text-gray-300 mb-2"
+      >
+        Volume
+      </label>
       <input
         type="range"
         name="volume-slider"
@@ -21,6 +26,7 @@ const VolumeControl = () => {
         value={volume}
         onChange={handleVolumeChange}
         disabled={!power}
+        className="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer"
       />
     </div>
   );
