@@ -4,9 +4,11 @@ import "./App.css";
 
 function App() {
   return (
-    <DrumProvider>
-      <DrumMachine />
-    </DrumProvider>
+    <div className="bg-blue-400 min-h-screen flex items-center justify-center px-5 font-display">
+      <DrumProvider>
+        <DrumMachine />
+      </DrumProvider>
+    </div>
   );
 }
 

@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme {
+  --shadow-3xl: 3px 4px 8px 4px #41729f;
+  --font-display:  "Quintessential", serif;
+}
