@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 // function to provide the context to the app
 export const DrumProvider = ({ children }) => {
-  const [display, setDisplay] = useState("");
+  const [display, setDisplay] = useState("Power ON");
   const [activePad, setActivePad] = useState(null);
   const [power, setPower] = useState(true);
   const [currentBank, setCurrentBank] = useState("Sound Bank One");

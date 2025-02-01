@@ -29,8 +29,7 @@ const DrumPad = ({ keyTrigger, sound, id }) => {
 
   return (
     <div
-      className="drum-pad bg-gray-700 active:bg-gray-800 text-center rounded 
-      cursor-pointer font-bold text-lg shadow-3xl active:translate-1 "
+      className="drum-pad bg-gray-700 active:bg-gray-800 cursor-pointer shadow-3xl active:translate-1 "
       id={id}
       onClick={playSoundFunction}
     >

@@ -14,10 +14,10 @@ const DrumMachine = () => {
   return (
     <div
       id="drum-machine"
-      className="bg-gray-800 text-white border-8 border-stone-600 rounded w-full"
+      className="bg-gray-800 border-8 border-stone-600 w-full"
     >
       {/* Section 1 */}
-      <div className="bg-amber-500 rounded">
+      <div className="bg-indigo-950">
         {pads.map((pad) => (
           <DrumPad
             key={pad.keyTrigger}
@@ -35,7 +35,7 @@ const DrumMachine = () => {
 
         <div className="bg-blue-900 ">
           <button
-            className="bg-green-500 hover:bg-green-700 font-bold p-4 rounded disabled:opacity-50"
+            className="bg-green-500 hover:bg-green-700 disabled:opacity-50"
             onClick={toggleSoundBank}
             disabled={!power}
           >
@@ -43,7 +43,7 @@ const DrumMachine = () => {
           </button>
 
           <button
-            className="bg-blue-500 hover:bg-blue-700 font-bold p-4 rounded "
+            className="bg-blue-500 hover:bg-blue-700 "
             onClick={togglePower}
           >
             {power ? "Power OFF" : "Power ON"}
