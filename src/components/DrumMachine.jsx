@@ -1,15 +1,14 @@
 import { useContext } from "react";
 import { DrumContext } from "../context/DrumContext";
-import DrumPad from "./DrumPad";
 import PadDisplay from "./PadDisplay";
 import VolumeControl from "./VolumeControl";
-import { soundBankOne, soundBankTwo } from "../utils/sounds";
+// import { soundBankOne, soundBankTwo } from "../utils/sounds";
 
 const DrumMachine = () => {
   const { power, togglePower, currentBank, toggleSoundBank } =
     useContext(DrumContext);
 
-  const pads = currentBank === "Sound Bank One" ? soundBankOne : soundBankTwo;
+  // const pads = currentBank === "Sound Bank One" ? soundBankOne : soundBankTwo;
 
   return (
     <div
@@ -43,16 +42,7 @@ const DrumMachine = () => {
 
       {/* Section 1 */}
       <div className="md:w-3/5 mt-3 md:mt-0">
-        <div className="d-pads grid grid-cols-3 gap-1 md:gap-1.5 select-none">
-          {pads.map((pad) => (
-            <DrumPad
-              key={pad.keyTrigger}
-              keyTrigger={pad.keyTrigger}
-              sound={pad.url}
-              id={pad.id}
-            />
-          ))}
-        </div>
+        <div className="d-pads grid grid-cols-3 gap-1 md:gap-1.5 select-none"></div>
       </div>
     </div>
   );
