@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DrumContext } from "../context/DrumContext";
 
-const PadDispay = () => {
+const PadDisplay = () => {
   const { display, power } = useContext(DrumContext);
 
   return (
@@ -13,4 +13,4 @@ const PadDispay = () => {
   );
 };
 
-export default PadDispay;
+export default PadDisplay;
