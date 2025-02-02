@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { DrumContext } from "../context/DrumContext";
-import DrumPad from "./drumpad";
+import DrumPad from "./DrumPad";
 import PadDispay from "./PadDisplay";
 import VolumeControl from "./VolumeControl";
 import { soundBankOne, soundBankTwo } from "../utils/sounds";
@@ -21,7 +21,7 @@ const DrumMachine = () => {
       <div className=" md:w-2/5">
         <div className="buttons flex flex-wrap md:flex-col-reverse lg:flex-row justify-end gap-3 lg:gap-6">
           <button
-            className="btns bg-roseRed text-champagne hover:bg-green-700 disabled:opacity-80 p-2 rounded md:w-[100%]
+            className="btns bg-roseRed text-champagne hover:bg-green-700 disabled:opacity-80 p-2 rounded md:w-[100%] outline-none
             lg:w-fit shadow-5xl cursor-pointer hover:scale-103 disabled:scale-100"
             onClick={toggleSoundBank}
             disabled={!power}
@@ -30,7 +30,7 @@ const DrumMachine = () => {
           </button>
 
           <button
-            className="btns bg-darkBlue text-champagne hover:bg-blue-700 p-2 rounded md:w-[100%] lg:w-fit shadow-5xl
+            className="btns bg-darkBlue text-champagne hover:bg-blue-700 p-2 rounded md:w-[100%] lg:w-fit shadow-5xl outline-none
             cursor-pointer hover:scale-103"
             onClick={togglePower}
           >
