@@ -54,7 +54,7 @@ const DrumsPad = ({ keyTrigger, sound, id }) => {
     <div className="bg-roseRed rounded cursor-pointer shadow-3xl">
       <div
         ref={drumsPadRef}
-        className="drum-pad bg-desertSun px-3 py-5 rounded text-darkBlue"
+        className="drum-pad bg-desertSun px-3 py-5 xl:py-7 rounded text-darkBlue"
         id={id}
         onClick={playSoundFunction}
       >
