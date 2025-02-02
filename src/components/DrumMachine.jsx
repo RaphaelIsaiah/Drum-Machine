@@ -21,7 +21,7 @@ const DrumMachine = () => {
       <div className=" md:w-2/5">
         <div className="buttons flex flex-wrap md:flex-col-reverse lg:flex-row justify-end gap-3 lg:gap-6">
           <button
-            className="btns bg-roseRed text-champagne hover:bg-green-700 disabled:opacity-50 p-2 rounded md:w-[100%]
+            className="btns bg-roseRed text-champagne hover:bg-green-700 disabled:opacity-80 p-2 rounded md:w-[100%]
             lg:w-fit shadow-5xl cursor-pointer hover:scale-103 disabled:scale-100"
             onClick={toggleSoundBank}
             disabled={!power}

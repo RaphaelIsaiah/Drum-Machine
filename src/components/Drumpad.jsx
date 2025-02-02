@@ -6,17 +6,37 @@ import { playSound, handleKeyPress } from "../utils/helpers";
 const DrumPad = ({ keyTrigger, sound, id }) => {
   const { power, updateDisplay, volume } = useContext(DrumContext);
   const audioRef = useRef(null);
+  const drumPadRef = useRef(null);
 
   const playSoundFunction = () => {
     if (power) {
       audioRef.current.volume = volume; // Adjust volume before playing sound
       playSound(keyTrigger);
       updateDisplay(id);
+      animatePad();
+    } else {
+      animatePadOff();
     }
   };
 
   const handleKeyPressFunction = (e) => {
     handleKeyPress(e, keyTrigger, playSoundFunction);
+  };
+
+  const animatePad = () => {
+    drumPadRef.current.classList.add("translate-0.5", "scale-97");
+
+    setTimeout(() => {
+      drumPadRef.current.classList.remove("translate-0.5", "scale-97");
+    }, 100);
+  };
+
+  const animatePadOff = () => {
+    drumPadRef.current.classList.add("scale-103");
+
+    setTimeout(() => {
+      drumPadRef.current.classList.remove("scale-103");
+    }, 100);
   };
 
   useEffect(() => {
@@ -30,7 +50,8 @@ const DrumPad = ({ keyTrigger, sound, id }) => {
   return (
     <div className="bg-roseRed rounded cursor-pointer shadow-3xl">
       <div
-        className="drum-pad bg-desertSun active:scale-97 active:translate-0.5 px-3 py-5 rounded text-darkBlue"
+        ref={drumPadRef}
+        className="drum-pad bg-desertSun px-3 py-5 rounded text-darkBlue"
         id={id}
         onClick={playSoundFunction}
       >

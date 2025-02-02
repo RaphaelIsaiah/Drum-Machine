@@ -42,9 +42,7 @@ export const DrumProvider = ({ children }) => {
 
     // Set a new timeout to clear the display
     const id = setTimeout(() => {
-      // updateDisplay(activePad);
       setDisplay(currentBank);
-      // setDisplay("");
     }, 1000);
 
     setTimeoutId(id);
