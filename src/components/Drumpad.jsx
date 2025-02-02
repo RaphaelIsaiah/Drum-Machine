@@ -28,18 +28,20 @@ const DrumPad = ({ keyTrigger, sound, id }) => {
   });
 
   return (
-    <div
-      className="drum-pad bg-gray-700 active:bg-gray-800 cursor-pointer shadow-3xl active:translate-1 "
-      id={id}
-      onClick={playSoundFunction}
-    >
-      {keyTrigger}
-      <audio
-        ref={audioRef}
-        src={sound}
-        className="clip"
-        id={keyTrigger}
-      ></audio>
+    <div className="bg-roseRed rounded cursor-pointer shadow-3xl">
+      <div
+        className="drum-pad bg-desertSun active:scale-97 active:translate-0.5 px-3 py-5 rounded text-darkBlue"
+        id={id}
+        onClick={playSoundFunction}
+      >
+        {keyTrigger}
+        <audio
+          ref={audioRef}
+          src={sound}
+          className="clip"
+          id={keyTrigger}
+        ></audio>
+      </div>
     </div>
   );
 };

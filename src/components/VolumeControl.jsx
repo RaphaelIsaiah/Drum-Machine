@@ -9,7 +9,7 @@ const VolumeControl = () => {
   };
 
   return (
-    <div id="volume-control" className="">
+    <div id="volume-control" className="py-3 lg:py-6">
       <input
         type="range"
         name="volume-slider"

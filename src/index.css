@@ -1,6 +1,81 @@
 @import "tailwindcss";
 
 @theme {
-  --shadow-3xl: 3px 4px 8px 4px #41729f;
-  --font-display:  "Quintessential", serif;
+  --shadow-3xl: 0px 4px 8px 0px #922c40;
+  --shadow-4xl: 2px 2px 8px 5px #922c40;
+  --shadow-5xl: 2px 2px 8px 5px #1e2640;
+  --font-display: "Quintessential", serif;
+  --color-*: initial;
+  --color-roseRed: #922c40;
+  --color-desertSun: #dc9750;
+  --color-champagne: #f3eac0;
+  --color-darkBlue: #1e2640;
+}
+
+/* Custom styles for the range input */
+input[type="range"] {
+  /* Remove default styling */
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: #1e2640;
+  border-radius: 0.1rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 10px;
+  background: #dc9750;
+  border-radius: 0.1rem;
+  margin-top: -12px;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background: #1e2640;
+  border-radius: 0.1rem;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 30px;
+  width: 10px;
+  background: #dc9750;
+  border-radius: 0.1rem;
+  margin-top: -12px;
+  cursor: pointer;
+}
+
+@media (max-width: 340px) {
+  .btns {
+    width: 100%;
+  }
+  .buttons {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 240px) {
+  body {
+    word-break: break-word;
+  }
+  .drum-pad,
+  .display,
+  .buttons {
+    font-size: smaller;
+  }
+
+  .d-pads {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
