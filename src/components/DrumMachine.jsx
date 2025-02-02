@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DrumContext } from "../context/DrumContext";
-import DrumPad from "./DrumPad.jsx";
-import PadDispay from "./PadDisplay";
+import DrumPad from "./DrumPad";
+import PadDisplay from "./PadDisplay";
 import VolumeControl from "./VolumeControl";
 import { soundBankOne, soundBankTwo } from "../utils/sounds";
 
@@ -38,7 +38,7 @@ const DrumMachine = () => {
           </button>
         </div>
         <VolumeControl />
-        <PadDispay />
+        <PadDisplay />
       </div>
 
       {/* Section 1 */}
