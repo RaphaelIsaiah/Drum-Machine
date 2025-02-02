@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { DrumContext } from "../context/DrumContext";
-import DrumPad from "./DrumPad";
+import DrumPad from "./DrumPad.jsx";
 import PadDispay from "./PadDisplay";
 import VolumeControl from "./VolumeControl";
 import { soundBankOne, soundBankTwo } from "../utils/sounds";
